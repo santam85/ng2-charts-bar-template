@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ChartConfiguration, ChartType } from 'chart.js';
+import { ChartConfiguration } from 'chart.js';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +9,6 @@ import { ChartConfiguration, ChartType } from 'chart.js';
 export class AppComponent {
   title = 'ng2-charts-demo';
 
-  public barChartType: ChartType = 'bar';
   public barChartLegend = true;
   public barChartPlugins = [];
 
@@ -19,6 +18,10 @@ export class AppComponent {
       { data: [ 65, 59, 80, 81, 56, 55, 40 ], label: 'Series A' },
       { data: [ 28, 48, 40, 19, 86, 27, 90 ], label: 'Series B' }
     ]
+  };
+
+  public barChartOptions: ChartConfiguration<'bar'>['options'] = {
+    responsive: false,
   };
 
   constructor() {
